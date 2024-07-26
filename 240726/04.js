@@ -93,15 +93,15 @@ console.log(arr);
 // 11.
 var arr = [1, 5, -3, 10, 0, 8];
 // 배열에 음수가 하나라도 있는지 판별하는 코드를 작성하고 반환값을 출력해주세요
-filterVal = arr.filter(function (value) {
+let someVal = arr.some(function (value) {
     return value < 0;
 });
-console.log(filterVal.length === 0 ? false : true);
+console.log(someVal);
 
 // 12.
 var arr = [1, 5, -3, 10, 0, 8];
 // 모든 숫자가 음수인지 판별하는 코드를 작성하고 반환값을 출력해주세요
-filterVal = arr.filter(function (value) {
+let everyVal = arr.every(function (value) {
     return value < 0;
 });
-console.log(filterVal.length === 6 ? true : false);
+console.log(everyVal);
