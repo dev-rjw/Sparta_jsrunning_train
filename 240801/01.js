@@ -2,12 +2,12 @@
 // info 메서드는 "저의 이름은 [name] 나이는 [age] 입니다." 를 출력해야 합니다.
 class Person {
     constructor(name, age) {
-        this._name = name;
-        this._age = age;
+        this.name = name;
+        this.age = age;
     }
 
     info() {
-        console.log(`저의 이름은 ${this._name} 나이는 ${this._age} 입니다.`);
+        console.log(`저의 이름은 ${this.name} 나이는 ${this.age} 입니다.`);
     }
 }
 
@@ -19,19 +19,7 @@ jung.info();
 class Student extends Person {
     constructor(name, age, study) {
         super(name, age);
-        this._study = study;
-    }
-
-    get name() {
-        return this._name;
-    }
-
-    get age() {
-        return this._age;
-    }
-
-    get study() {
-        return this._study;
+        this.study = study;
     }
 }
 
@@ -44,16 +32,16 @@ console.log(student1.name + " / " + student1.age + " / " + student1.study);
 class Tutee extends Person {
     constructor(name, age, study) {
         super(name, age);
-        this._study = study;
+        this.study = study;
     }
 
     info() {
-        console.log(`저의 이름은 ${this._name} 나이는 ${this._age} 현재 ${this._study}를 학습하고 있습니다.`);
+        console.log(`저의 이름은 ${this.name} 나이는 ${this.age} 현재 ${this.study}를 학습하고 있습니다.`);
     }
 }
 const tutee = new Tutee("재상", 12, "javascript");
 tutee.info();
 
 // 6. Student 클래스가 Person 클래스의 하위 클래스인 확인하고, tutee 인스턴스가 Studnet 클래스의 인스턴스인지 확인하여 출력해보세요.
-console.log(student1 instanceof Person);
+console.log(Student.prototype instanceof Person);
 console.log(tutee instanceof Student);
